@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
         title = "Menu"
         navigationItem.hidesBackButton = true
         let rightBarBtn = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(didTapRightBarBtn))
-        rightBarBtn.tintColor = .black
+        rightBarBtn.tintColor = .label
         navigationItem.rightBarButtonItem = rightBarBtn
     }
     
