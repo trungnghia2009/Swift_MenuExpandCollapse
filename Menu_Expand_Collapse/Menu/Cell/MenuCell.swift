@@ -10,7 +10,7 @@ import UIKit
 class MenuCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: MenuCell.self)
-    
+
     @IBOutlet private weak var titleLabel: UILabel!
     
     func configure(title: String) {

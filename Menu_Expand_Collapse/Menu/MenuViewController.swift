@@ -28,11 +28,6 @@ class MenuViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Return title Alignment for rootView
-        navigationController?.navigationBar.standardAppearance.titlePositionAdjustment = .zero
-        navigationController?.navigationBar.scrollEdgeAppearance?.titlePositionAdjustment = .zero
-        navigationController?.navigationBar.compactAppearance?.titlePositionAdjustment = .zero
     }
     
     private func configureNavigationBar() {
@@ -41,12 +36,6 @@ class MenuViewController: UIViewController {
         let rightBarBtn = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(didTapRightBarBtn))
         rightBarBtn.tintColor = .black
         navigationItem.rightBarButtonItem = rightBarBtn
-        
-        // Align title to the left side
-        let offset = UIOffset(horizontal: -CGFloat.greatestFiniteMagnitude, vertical: 0)
-        navigationController?.navigationBar.standardAppearance.titlePositionAdjustment = offset
-        navigationController?.navigationBar.scrollEdgeAppearance?.titlePositionAdjustment = offset
-        navigationController?.navigationBar.compactAppearance?.titlePositionAdjustment = offset
     }
     
     private func configureTableView() {
@@ -61,7 +50,6 @@ class MenuViewController: UIViewController {
     @objc private func didTapRightBarBtn() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 // MARK: UITableViewDataSource
@@ -108,6 +96,7 @@ extension MenuViewController: UITableViewDelegate {
             sections[indexPath.section].isOpened.toggle()
             tableView.reloadSections([indexPath.section], with: .none)
             
+            // Handle navigation here
             if let menu = viewModel.createMainMenuWithoutSubMenu(menu: sections[indexPath.section].title.rawValue) {
                 switch menu {
                 case .bookmark:
@@ -120,6 +109,7 @@ extension MenuViewController: UITableViewDelegate {
                 navigationController?.popViewController(animated: true)
             }
         } else {
+            
             // Handle navigation here
             let cellName = sections[indexPath.section].options[indexPath.row - 1]
             switch cellName {
@@ -138,7 +128,6 @@ extension MenuViewController: UITableViewDelegate {
             case .sendFeature3:
                 print("Did tap cell: \(cellName.rawValue)")
             }
-            
             navigationController?.popViewController(animated: true)
         }
         

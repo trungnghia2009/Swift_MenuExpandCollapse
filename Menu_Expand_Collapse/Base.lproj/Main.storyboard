@@ -15,18 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here righ now..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYZ-Yn-2d3">
+                                <rect key="frame" x="103.5" y="436" width="207.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oYZ-Yn-2d3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Fi-EW-7vL"/>
+                            <constraint firstItem="oYZ-Yn-2d3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dFH-jc-5Dg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="5CR-av-PTB">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="ellipsis" catalog="system" id="Lih-nB-5ee">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="didTapMenuBar:" destination="BYZ-38-t0r" id="soN-cL-BKk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="0do-80-Eh0">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="didTapInfo:" destination="BYZ-38-t0r" id="j6e-Zq-JlW"/>
                             </connections>
@@ -35,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028.2442748091603" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1027.536231884058" y="-28.125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWd-1J-kJ9">
@@ -60,6 +72,12 @@
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

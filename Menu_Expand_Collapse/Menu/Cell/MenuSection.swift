@@ -25,7 +25,7 @@ class MenuSection: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        menuImage.tintColor = .black
+        menuImage.tintColor = .label
     }
     
     private func configureUI() {
@@ -44,5 +44,4 @@ class MenuSection: UITableViewCell {
         menuImage.image = UIImage(systemName: model.title.menuImage)
         menuTitleLabel.text = model.title.rawValue
     }
-    
 }
