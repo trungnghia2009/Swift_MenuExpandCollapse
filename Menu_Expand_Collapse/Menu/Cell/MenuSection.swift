@@ -25,19 +25,16 @@ class MenuSection: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none // Remove highlight selection
         menuImage.tintColor = .black
     }
     
     private func configureUI() {
-        if model?.options.count == 0 {
-            expandCollapseImage.isHidden = true
-        }
-        if isOpened {
-            expandCollapseImage.image = UIImage(systemName: "arrowtriangle.up.fill")
-        } else {
-            expandCollapseImage.image = UIImage(systemName: "arrowtriangle.down.fill")
-        }
+        model?.options.count == 0 ?
+            (expandCollapseImage.isHidden = true) :
+            (selectionStyle = .none)
+        isOpened ?
+            (expandCollapseImage.image = UIImage(systemName: "arrowtriangle.up.fill")) :
+            (expandCollapseImage.image = UIImage(systemName: "arrowtriangle.down.fill"))
     }
     
     func configure() {
